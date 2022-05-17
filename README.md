@@ -54,7 +54,7 @@ jobs:
         id: register-api
         with: 
           apigw-url: ${{ secrets.APIGW_URL }}
-          apigw-user: ${{ secrets.APIGW_USERNAME }}
+          apigw-username: ${{ secrets.APIGW_USERNAME }}
           apigw-password: ${{ secrets.APIGW_PASSWORD }}
           api-spec: 'https://petstore3.swagger.io/api/v3/openapi.json'
           set-active: true

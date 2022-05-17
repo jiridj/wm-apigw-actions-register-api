@@ -10,11 +10,12 @@ let logger;
  * @param {String} spec The specification file
  */
 async function registerApi(spec) {
-    let api;
+    const localCopy = sdk.getSpecFile(spec);
 
-    const info = sdk.getSpecInfo(spec);
+    const info = sdk.getSpecInfo(localCopy);
     logger.debug(`Registering ${info.apiName} with version ${info.apiVersion}`);
 
+    let api;
     try {
         const versions = await sdk.findApiByNameAndVersion(info.apiName);
 
@@ -32,13 +33,13 @@ async function registerApi(spec) {
         }
 
         logger.debug('Updating specification');
-        api = await sdk.updateApi(current.api, spec, info.apiType);
+        api = await sdk.updateApi(current.api, localCopy, info.apiType);
     }
     catch(error) {
         if (error.startsWith('Failed to find')) {
             // The API does not exist and we have to create it.
             logger.debug('Creating new API');
-            api = await sdk.createApi(spec, info.apiType);
+            api = await sdk.createApi(localCopy, info.apiType);
         }
         else {
             throw error;
