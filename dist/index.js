@@ -3559,6 +3559,8 @@ const axios = __nccwpck_require__(1343);
 const fs = __nccwpck_require__(7147);
 const logger = __nccwpck_require__(2414);
 const path = __nccwpck_require__(1017);
+const stream = __nccwpck_require__(2781);
+const util = __nccwpck_require__(3837);
 
 const allowedTypes = [ 
     { 
@@ -3630,10 +3632,13 @@ async function getFileFromUrl(file, workspace = process.cwd()) {
     const writer = fs.createWriteStream(localCopy);
 
     try{ 
+        const finished = util.promisify(stream.finished);
+
         logger.debug(`GET ${file}`);
         await axios.get(file, { responseType: 'stream' })
-            .then(async (response) => {
-                await response.data.pipe(writer);
+            .then((response) => {
+                response.data.pipe(writer);
+                return finished(writer);
             });
     }
     catch(error) {
