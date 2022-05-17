@@ -34,7 +34,10 @@ async function registerApi(spec) {
         }
 
         logger.debug('Updating specification');
-        api = await sdk.updateApi(current.api, localCopy, info.apiType);
+        logger.debug(`API ID = ${current.api.id}`);
+        logger.debug(`SPEC = ${localCopy}`);
+        logger.debug(`API ID = ${info.apiType}`);
+        api = await sdk.updateApi(current.api.id, localCopy, info.apiType);
     }
     catch(error) {
         if (error.startsWith('Failed to find')) {
