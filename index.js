@@ -11,7 +11,7 @@ let logger;
  */
 async function registerApi(spec) {
     logger.debug(`Fetching spec file ${spec}`);
-    const localCopy = sdk.getSpecFile(spec);
+    const localCopy = await sdk.getSpecFile(spec);
 
     const info = sdk.getSpecInfo(localCopy);
     logger.debug(`Registering ${info.apiName} with version ${info.apiVersion}`);
