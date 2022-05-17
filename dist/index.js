@@ -52,7 +52,7 @@ async function registerApi(spec) {
             api = await sdk.createApi(localCopy, info.apiType);
         }
         else {
-            logger.debug(error);
+            logger.error(error);
             throw error;
         }
     }
@@ -120,7 +120,8 @@ async function run() {
         }
     }
     catch(error) {
-        core.setFailed(error.message);
+        logger.error(error);
+        core.setFailed(error);
     }
 }
 
