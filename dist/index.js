@@ -40,6 +40,9 @@ async function registerApi(spec) {
         }
 
         logger.debug('Updating specification');
+        logger.debug(`API ID = ${current.api}`);
+        logger.debug(`SPEC = ${localCopy}`);
+        logger.debug(`API ID = ${info.apiType}`);
         api = await sdk.updateApi(current.api, localCopy, info.apiType);
     }
     catch(error) {
