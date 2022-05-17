@@ -49,6 +49,7 @@ async function registerApi(spec) {
             api = await sdk.createApi(localCopy, info.apiType);
         }
         else {
+            logger.debug(error);
             throw error;
         }
     }
