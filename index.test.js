@@ -4,12 +4,12 @@ const sdk = require('@jiridj/wm-apigw-config-sdk');
 
 jest.mock('@jiridj/wm-apigw-config-sdk');
 
-jest.spyOn(sdk, 'getSpecInfo').mockImplementation((spec) => {
+jest.spyOn(sdk, 'getSpecInfo').mockImplementation(() => {
     return { 
         apiName: 'Swagger Petstore - OpenAPI 3.0',
         apiVersion: '1.0.11',
         apiType: 'openapi'
-    }
+    };
 });
 
 const mockedSdk = jest.mocked(sdk, true);

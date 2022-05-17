@@ -116,7 +116,7 @@ module.exports = {
     registerApi,
     setupLogger,
     run
-}
+};
 
 if (require.main === module) {
     run();
