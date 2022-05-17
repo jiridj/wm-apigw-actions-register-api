@@ -10,6 +10,7 @@ let logger;
  * @param {String} spec The specification file
  */
 async function registerApi(spec) {
+    logger.debug(`Fetching spec file ${spec}`);
     const localCopy = sdk.getSpecFile(spec);
 
     const info = sdk.getSpecInfo(localCopy);
