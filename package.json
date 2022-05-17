@@ -1,0 +1,36 @@
+{
+    "name": "wm-apigw-actions-register-api",
+    "version": "v1",
+    "description": "Registers an API project in wM API Gateway",
+    "main": "index.js",
+    "scripts": {
+        "lint": "eslint **.js",
+        "test": "jest --coverage --verbose",
+        "package": "ncc build index.js -o dist",
+        "all": "npm run lint && npm test && npm run package"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jiridj/wm-apigw-actions-register-api.git"
+    },
+    "keywords": [
+        "webMethods",
+        "API Gateway",
+        "GitHub",
+        "Actions"
+    ],
+    "author": "jiri.dejagere@softwareag.com",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jiridj/wm-apigw-actions-register-api/issues"
+    },
+    "homepage": "https://github.com/jiridj/wm-apigw-actions-register-api#readme",
+    "dependencies": {
+        "@actions/core": "^1.6.0",
+        "@jiridj/wm-apigw-config-sdk": "^0.1.4"
+    },
+    "devDependencies": {
+        "eslint": "^8.13.0",
+        "jest": "^27.5.1"
+    }
+}

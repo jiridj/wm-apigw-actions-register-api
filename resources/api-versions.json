@@ -1,0 +1,30 @@
+[
+    {
+        "api": {
+            "apiName": "Swagger Petstore - OpenAPI 3.0",
+            "apiVersion": "1.0.10",
+            "apiDescription": "This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about\nSwagger at [http://swagger.io](http://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!\nYou can now help us improve the API whether it's by making changes to the definition itself or to the code.\nThat way, with time, we can improve the API in general, and expose some of the new features in OAS3.\n\nSome useful links:\n- [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)\n- [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)",
+            "isActive": true,
+            "type": "REST",
+            "tracingEnabled": false,
+            "publishedPortals": [],
+            "systemVersion": 1,
+            "id": "36edf697-18f0-4de0-8b2e-dd81fc161034"
+        },
+        "responseStatus": "SUCCESS"
+    },
+    {
+        "api": {
+            "apiName": "Swagger Petstore - OpenAPI 3.0",
+            "apiVersion": "1.0.11",
+            "apiDescription": "This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about\nSwagger at [http://swagger.io](http://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!\nYou can now help us improve the API whether it's by making changes to the definition itself or to the code.\nThat way, with time, we can improve the API in general, and expose some of the new features in OAS3.\n\nSome useful links:\n- [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)\n- [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)",
+            "isActive": false,
+            "type": "REST",
+            "tracingEnabled": false,
+            "publishedPortals": [],
+            "systemVersion": 2,
+            "id": "2aa356f7-5e3a-4d2d-b7f2-7175e2941124"
+        },
+        "responseStatus": "SUCCESS"
+    }
+]

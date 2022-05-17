@@ -1,0 +1,22 @@
+# VS Code settings
+.vscode/
+thunder_client/
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Node modules
+node_modules/
+
+# Jest coverage
+coverage/
+
+# Optional npm cache directory
+.npm

@@ -1,0 +1,40 @@
+name: 'Register an API in wM API Gateway'
+description: 'Registers an API within the specified API Gateway instance.'
+branding:
+  icon: 'lock'
+  color: 'blue'
+inputs:
+  apigw-url: 
+    description: 'The url of your API Gateway instance.'
+    required: true
+  apigw-username:
+    description: 'The API Gateway user to execute this action with.'
+    required: true
+  apigw-password:
+    description: 'The password for the API Gateway user to execute this action with.'
+    required: true
+  api-spec:
+    description: 'The file or url for the API specification. This action only supports json-based OpenAPI and Swagger specs.'
+    required: true
+  set-active:
+    description: 'Activate the API project after creation.'
+    required: false
+    default: false
+  debug:
+    description: 'Use debug logging. Default is false.'
+    required: false
+    default: false
+outputs: 
+  api-id:
+    description: 'The unique identifier of the API project.'
+  api-name:
+    description: 'The name of the API project.'
+  api-version:
+    description: 'The version of the API project.'
+  api-type:
+    description: 'The type of the API project.'
+  api-is-active:
+    description: 'Indicates whether the API version is currently active.'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
