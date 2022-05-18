@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+if [ -e .commit ]
+    then
+    rm .commit
+    git add dist/index.js
+    git commit --amend -C HEAD --no-verify
+fi
