@@ -3072,6 +3072,10 @@ async function activateOrDeactivateApi(apiId, action, failIfCurrent) {
         }
         else {
             logger.error(error);
+            // check if this is an error with data, returned by the gateway
+            if ('response' in error && 'data' in error.response) {
+                logger.error(JSON.stringify(error.response.data));
+            }
             throw `Failed to ${action} the API with ID ${apiId}!`;
         }
     }
@@ -3113,7 +3117,11 @@ async function createApi(spec, type = 'openapi') {
         return response.data.apiResponse.api;
     }
     catch(error) {
-        logger.debug(error);
+        logger.error(error);
+        // check if this is an error with data, returned by the gateway
+        if ('response' in error && 'data' in error.response) {
+            logger.error(JSON.stringify(error.response.data));
+        }
         throw 'Failed to create the API!';
     }
 }
@@ -3158,7 +3166,11 @@ async function createApiVersion(apiId, apiVersion, retainApplications = true) {
         return response.data.apiResponse.api;
     }
     catch(error) {
-        logger.debug(error);
+        logger.error(error);
+        // check if this is an error with data, returned by the gateway
+        if ('response' in error && 'data' in error.response) {
+            logger.error(JSON.stringify(error.response.data));
+        }
         throw 'Failed to create new API version!';
     }
 }
@@ -3202,7 +3214,11 @@ async function deleteApi(apiId, force = false) {
         return (response.data.apiResponse[0].responseStatus == 'SUCCESS');
     }
     catch(error) {
-        logger.debug(error);
+        logger.error(error);
+        // check if this is an error with data, returned by the gateway
+        if ('response' in error && 'data' in error.response) {
+            logger.error(JSON.stringify(error.response.data));
+        }
         throw `Failed to delete the API with ID ${apiId}!`;
     }    
 }
@@ -3229,7 +3245,11 @@ async function getApiVersions(apiId) {
         return response.data.apiResponse;
     }
     catch(error) {
-        logger.debug(error);
+        logger.error(error);
+        // check if this is an error with data, returned by the gateway
+        if ('response' in error && 'data' in error.response) {
+            logger.error(JSON.stringify(error.response.data));
+        }
         throw `Failed to find versions of the API with ID ${apiId}!`;
     }
 }
@@ -3256,7 +3276,11 @@ async function findApiById(apiId) {
         return response.data.apiResponse.api;
     }
     catch(error) {
-        logger.debug(error);
+        logger.error(error);
+        // check if this is an error with data, returned by the gateway
+        if ('response' in error && 'data' in error.response) {
+            logger.error(JSON.stringify(error.response.data));
+        }
         throw `Failed to find the API with ID ${apiId}!`;
     }
 }
@@ -3290,7 +3314,11 @@ async function findApiByNameAndVersion(apiName, apiVersion='*') {
         }
     }
     catch(error) {
-        logger.debug(error);
+        logger.error(error);
+        // check if this is an error with data, returned by the gateway
+        if ('response' in error && 'data' in error.response) {
+            logger.error(JSON.stringify(error.response.data));
+        }
         throw 'Failed to query the API Gateway!';
     }
 
@@ -3353,7 +3381,11 @@ async function updateApi(apiId, spec, type = 'openapi') {
         return response.data.apiResponse.api;
     }
     catch(error) {
-        logger.debug(error);
+        logger.error(error);
+        // check if this is an error with data, returned by the gateway
+        if ('response' in error && 'data' in error.response) {
+            logger.error(JSON.stringify(error.response.data));
+        }
         throw 'Failed to update the API!';
     }
 }
