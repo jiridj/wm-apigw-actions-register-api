@@ -26,11 +26,11 @@
     },
     "homepage": "https://github.com/jiridj/wm-apigw-actions-register-api#readme",
     "dependencies": {
-        "@actions/core": "^1.6.0",
-        "@jiridj/wm-apigw-config-sdk": "^0.1.6"
+        "@actions/core": "^1.8.2",
+        "@jiridj/wm-apigw-config-sdk": "^0.1.7"
     },
     "devDependencies": {
-        "eslint": "^8.13.0",
+        "eslint": "^8.15.0",
         "jest": "^27.5.1"
     }
 }

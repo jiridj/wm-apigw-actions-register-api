@@ -3048,6 +3048,7 @@ async function activateOrDeactivateApi(apiId, action, failIfCurrent) {
         logger.debug(`PUT ${url}`);
         const response = await axios.put(
             url,
+            null,   // no request payload required
             {
                 headers: { 'Accept' : 'application/json' },
                 auth: auth.getGwAuth()
@@ -3059,6 +3060,7 @@ async function activateOrDeactivateApi(apiId, action, failIfCurrent) {
     catch(error) {
         if (error.status) {
             if (error.status != 500 || (error.status == 500 && failIfCurrent)) {
+                logger.error(error);
                 throw `Failed to ${action} the API with ID ${apiId}!`;
             }
             else {
@@ -3069,7 +3071,7 @@ async function activateOrDeactivateApi(apiId, action, failIfCurrent) {
             }
         }
         else {
-            logger.debug(error);
+            logger.error(error);
             throw `Failed to ${action} the API with ID ${apiId}!`;
         }
     }
