@@ -4,9 +4,11 @@
     "description": "Registers an API project in wM API Gateway",
     "main": "index.js",
     "scripts": {
+        "before": "scripts/pre-commit",
         "lint": "eslint **.js",
         "test": "jest --coverage --verbose",
-        "ncc": "ncc build index.js -o dist && git add dist/index.js",
+        "ncc": "ncc build index.js -o dist",
+        "after": "scripts/post-commit",
         "all": "npm run lint && npm test && npm run ncc"
     },
     "repository": {
@@ -32,11 +34,16 @@
     "devDependencies": {
         "eslint": "^8.15.0",
         "jest": "^27.5.1",
+        "post-commit": "^0.0.1",
         "pre-commit": "^1.2.2"
     },
     "pre-commit": [
-      "lint",
-      "test",
-      "ncc"
+        "before",
+        "lint",
+        "test",
+        "ncc"
+    ],
+    "post-commit": [
+        "after"
     ]
 }

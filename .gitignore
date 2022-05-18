@@ -18,5 +18,8 @@ node_modules/
 # Jest coverage
 coverage/
 
-# Optional npm cache directory
+# npm cache directory
 .npm
+
+# pre-commit helper
+.commit
