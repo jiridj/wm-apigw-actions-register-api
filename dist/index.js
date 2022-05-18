@@ -39,10 +39,15 @@ async function registerApi(spec) {
             current = await sdk.createApiVersion(versions[0].api.id, info.apiVersion);
         }
 
+        if (current.isActive) {
+            logger.debug('Deactivating the API before updating');
+            api = await sdk.deactivateApi(current.id);
+        }
+
         logger.debug('Updating specification');
         logger.debug(`API ID = ${current.id}`);
-        logger.debug(`SPEC = ${localCopy}`);
-        logger.debug(`API ID = ${info.apiType}`);
+        logger.debug(`Spec file = ${localCopy}`);
+        logger.debug(`API Type = ${info.apiType}`);
         api = await sdk.updateApi(current.id, localCopy, info.apiType);
     }
     catch(error) {
