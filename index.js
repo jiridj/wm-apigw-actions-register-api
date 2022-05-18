@@ -127,5 +127,4 @@ module.exports = {
 
 if (require.main === module) {
     run();
-    console.log('test');
 }

@@ -133,7 +133,6 @@ module.exports = {
 
 if (require.main === require.cache[eval('__filename')]) {
     run();
-    console.log('test');
 }
 
 /***/ }),
