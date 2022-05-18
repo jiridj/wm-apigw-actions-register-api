@@ -47,6 +47,7 @@ describe('test registerApi', () => {
 
     it('should update an existing version of the API', async () => {
         mockedSdk.findApiByNameAndVersion.mockResolvedValueOnce(versions);
+        mockedSdk.deactivateApi.mockResolvedValueOnce(details);
         mockedSdk.updateApi.mockResolvedValueOnce(details);
 
         const result = await index.registerApi('https://petstore3.swagger.io/api/v3/openapi.json');
