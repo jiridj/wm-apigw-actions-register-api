@@ -26,7 +26,7 @@ If you feel a particular feature is missing, or if you have found a bug, feel fr
 |apigw-username|yes|The API Gateway user to execute this action with.|
 |apigw-password|yes|The password for the API Gateway user to execute this action with.|
 |api-spec|yes|The file or url for the API specification.|
-|set-active|no|Activate the API project after creation. Default if false.|
+|set-active|no|Activate the API project after registration. Default if false.|
 |debug|no|Use debug logging. Default if false.|
 
 ## Outputs
@@ -34,8 +34,8 @@ If you feel a particular feature is missing, or if you have found a bug, feel fr
 |Output|Description|
 |-|-|
 |api-id|The unique identifier of the API project.|
-|api-name|The name of the API project. This will be the same as the input, but added here for convenient access in subsequent steps in the workflow.|
-|api-version|The version of the API project. This will be the same as the input, but added here for convenient access in subsequent steps in the workflow.|
+|api-name|The name of the API project. This will be pulled from the API specification.|
+|api-version|The version of the API project. This will be pulled from the API specification.|
 |api-type|The type of the API project.|
 |api-is-active|Indicates whether the API project is currently active.|
 
