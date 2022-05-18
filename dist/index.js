@@ -39,6 +39,7 @@ async function registerApi(spec) {
             current = await sdk.createApiVersion(versions[0].api.id, info.apiVersion);
         }
 
+        // updating an API fails if it is active
         if (current.isActive) {
             logger.debug('Deactivating the API before updating');
             api = await sdk.deactivateApi(current.id);
