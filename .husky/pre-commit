@@ -3,6 +3,16 @@
 
 [ -n "$CI" ] && exit 0
 
+changes=$(git diff --diff-filter=d --cached --name-only)
+
+jsfiles=$(git diff --diff-filter=d --cached --name-only | grep -E '\.(js)$' || true)
+
+if [ ${#jsfiles} -lt 1 ]; then
+    echo -e "There are no staged .js or .vue files to lint or test.\n"
+    exit
+fi
+
 touch .commit
+echo "Running lint and tests."
 npm run lint
 npm run test
