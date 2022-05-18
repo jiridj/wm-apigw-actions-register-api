@@ -3,7 +3,7 @@
 ![build](https://img.shields.io/github/workflow/status/jiridj/wm-apigw-actions-register-api/ci)
 ![coverage](https://img.shields.io/codecov/c/gh/jiridj/wm-apigw-actions-register-api?token=35GE4E56NO)
 ![vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/jiridj/wm-apigw-actions-register-api)
-![open issues](https://img.shields.io/github/issues-raw/jiridj/wm-apigw-actions-register-api)
+[![open issues](https://img.shields.io/github/issues-raw/jiridj/wm-apigw-actions-register-api)](https://github.com/jiridj/wm-apigw-actions-register-api/issues)
 ![downloads](https://img.shields.io/github/downloads/jiridj/wm-apigw-actions-register-api/total)
 
 With this action you can register an API or API version in webMethods API Gateway. The step output from this action provides information you can use in following steps in your GitHub Actions workflow job.
