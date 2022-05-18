@@ -101,9 +101,3 @@ describe('test run', () => {
     });
 
 });
-
-describe('quick test for pre-commit', () => {
-    it ('dummy', () => {
-        expect(true).toBeTruthy();
-    });
-});
