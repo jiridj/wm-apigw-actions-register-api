@@ -4,4 +4,5 @@
 [ -n "$CI" ] && exit 0
 
 touch .commit
-npm run all
+npm run lint
+npm run test

@@ -4,6 +4,7 @@
 if [ -e .commit ]
     then
     rm .commit
+    npm run ncc
     git add dist/index.js
     git commit --amend --no-edit --no-verify
 fi
