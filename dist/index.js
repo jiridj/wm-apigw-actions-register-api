@@ -3529,7 +3529,11 @@ async function findStage(stageName) {
         allStages = response.data.stages;
     }
     catch(error) {
-        logger.debug(error);
+        logger.error(error);
+        // check if this is an error with data, returned by the gateway
+        if ('response' in error && 'data' in error.response) {
+            logger.error(JSON.stringify(error.response.data));
+        }
         throw 'Failed to query the API Gateway!';
     }
 
@@ -3585,7 +3589,11 @@ async function promoteApi(promotionName, apiId, stageId, overwrite = true, overw
         return result.data.promotion;
     }
     catch(error) {
-        logger.debug(error);
+        logger.error(error);
+        // check if this is an error with data, returned by the gateway
+        if ('response' in error && 'data' in error.response) {
+            logger.error(JSON.stringify(error.response.data));
+        }
         throw 'Failed to promote API!';
     }
 }
