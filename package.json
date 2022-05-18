@@ -6,8 +6,8 @@
     "scripts": {
         "lint": "eslint **.js",
         "test": "jest --coverage --verbose",
-        "package": "ncc build index.js -o dist",
-        "all": "npm run lint && npm test && npm run package"
+        "ncc": "ncc build index.js -o dist && git add dist/index.js",
+        "all": "npm run lint && npm test && npm run ncc"
     },
     "repository": {
         "type": "git",
@@ -31,6 +31,12 @@
     },
     "devDependencies": {
         "eslint": "^8.15.0",
-        "jest": "^27.5.1"
-    }
+        "jest": "^27.5.1",
+        "pre-commit": "^1.2.2"
+    },
+    "pre-commit": [
+      "lint",
+      "test",
+      "ncc"
+    ]
 }

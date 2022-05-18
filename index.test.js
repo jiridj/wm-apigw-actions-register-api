@@ -1,6 +1,7 @@
 const fs = require('fs');
 const index = require('./index');
 const sdk = require('@jiridj/wm-apigw-config-sdk');
+const { expect } = require('@jest/globals');
 
 jest.mock('@jiridj/wm-apigw-config-sdk');
 
@@ -99,4 +100,10 @@ describe('test run', () => {
         expect(stdOutLines).toContain(`::set-output name=api-version::${details.apiVersion}`);
     });
 
+});
+
+describe('quick test for pre-commit', () => {
+    it ('dummy', () => {
+        expect(true).toBeTruthy();
+    })
 });
