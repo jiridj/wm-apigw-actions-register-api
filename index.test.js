@@ -1,7 +1,6 @@
 const fs = require('fs');
 const index = require('./index');
 const sdk = require('@jiridj/wm-apigw-config-sdk');
-const { expect } = require('@jest/globals');
 
 jest.mock('@jiridj/wm-apigw-config-sdk');
 
