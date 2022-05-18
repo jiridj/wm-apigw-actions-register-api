@@ -4,12 +4,12 @@
     "description": "Registers an API project in wM API Gateway",
     "main": "index.js",
     "scripts": {
-        "before": "scripts/pre-commit",
         "lint": "eslint **.js",
         "test": "jest --coverage --verbose",
         "ncc": "ncc build index.js -o dist",
-        "after": "scripts/post-commit",
-        "all": "npm run lint && npm test && npm run ncc"
+        "all": "npm run lint && npm test && npm run ncc",
+        "before": "touch .commit",
+        "after": "if [ -e .commit ] then rm.commit && git add dist/index.js && git commit --amend -C HEAD --no-verify; fi"
     },
     "repository": {
         "type": "git",
