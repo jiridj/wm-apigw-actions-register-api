@@ -41,7 +41,12 @@ If you feel a particular feature is missing, or if you have found a bug, feel fr
 
 ## Example
 
-Following example workflow illustrates how to use the action in your CICD configuration.
+The action reads the API name and version from the specification file and applies following logic:
+1. If no API exists with this name, create a new API.
+2. If the API exists with the specified version, update it. 
+3. If the API exists but not with the specified version, a new version is created.
+
+This example workflow illustrates how to use the action in your CICD configuration.
 
 ``` yaml
 name: 'Example workflow'
