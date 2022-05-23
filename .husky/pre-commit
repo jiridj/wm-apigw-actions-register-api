@@ -8,7 +8,7 @@ changes=$(git diff --diff-filter=d --cached --name-only)
 jsfiles=$(git diff --diff-filter=d --cached --name-only | grep -E '\.(js)$' || true)
 
 if [ ${#jsfiles} -lt 1 ]; then
-    echo -e "There are no staged .js or .vue files to lint or test.\n"
+    echo -e "There are no staged .js files to lint or test.\n"
     exit
 fi
 
