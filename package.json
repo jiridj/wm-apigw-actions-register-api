@@ -28,7 +28,7 @@
     "homepage": "https://github.com/jiridj/wm-apigw-actions-register-api#readme",
     "dependencies": {
         "@actions/core": "^1.9.0",
-        "@jiridj/wm-apigw-config-sdk": "^0.2.3"
+        "@jiridj/wm-apigw-config-sdk": "^0.2.4"
     },
     "devDependencies": {
         "eslint": "^8.18.0",
