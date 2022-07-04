@@ -31,7 +31,7 @@
         "@jiridj/wm-apigw-config-sdk": "^0.2.4"
     },
     "devDependencies": {
-        "eslint": "^8.18.0",
+        "eslint": "^8.19.0",
         "husky": "^8.0.1",
         "jest": "^28.1.1"
     }
