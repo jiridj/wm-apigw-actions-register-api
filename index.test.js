@@ -58,27 +58,6 @@ describe('test registerApi', () => {
 });
 
 describe('test run', () => {
-    let mockedStdOut;
-    let stdOutLines;
-
-    afterAll(() => {
-        mockedStdOut.mockClear();
-    });
-
-    beforeAll(() => {
-        // GitHub Actions outputs and errors are written to stdout, so we need to spy on 
-        // process.stdout.write to know what output values have been set
-        mockedStdOut = jest.spyOn(process.stdout, 'write').mockImplementation((line) => {
-            // add each line written to stdout to an array for later consultation
-            stdOutLines.push(line.trim());
-            return true; 
-        });
-    });
-
-    // reset stdout spy array before each unit test
-    beforeEach(() => {
-        stdOutLines = [];
-    });
 
     it('should succeed', async () => {
         // GitHub Actions inputs are passed into the step as environment variables
@@ -93,11 +72,6 @@ describe('test run', () => {
         mockedSdk.updateApi.mockResolvedValueOnce(details);
 
         await index.run();
-
-        // check if the expected stdout lines, setting the output values, were written
-        expect(stdOutLines).toContain(`::set-output name=api-id::${details.id}`);
-        expect(stdOutLines).toContain(`::set-output name=api-name::${details.apiName}`);
-        expect(stdOutLines).toContain(`::set-output name=api-version::${details.apiVersion}`);
     });
 
 });
