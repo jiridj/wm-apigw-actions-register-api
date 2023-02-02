@@ -1,6 +1,6 @@
 # webMethods API Gateway "Register API" action for GitHub Actions
 
-![build](https://img.shields.io/github/workflow/status/jiridj/wm-apigw-actions-register-api/ci)
+![build](https://img.shields.io/github/actions/workflow/status/jiridj/wm-apigw-actions-register-api/ci.yml?branch=main)
 ![coverage](https://img.shields.io/codecov/c/gh/jiridj/wm-apigw-actions-register-api?token=35GE4E56NO)
 ![vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/jiridj/wm-apigw-actions-register-api)
 [![open issues](https://img.shields.io/github/issues-raw/jiridj/wm-apigw-actions-register-api)](https://github.com/jiridj/wm-apigw-actions-register-api/issues)
